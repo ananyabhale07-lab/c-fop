@@ -19,6 +19,9 @@ void main(){
         case 4:
         printf("%f",a/b);
         break;
+        default:
+        printf("Invalid");
+        break;
 
     }
 
