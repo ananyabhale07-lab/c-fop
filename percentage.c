@@ -12,7 +12,7 @@ void main(){
         printf("Total marks:%f\n",total);
         printf("Percentage:%f\n",percentage);
         if(percentage>=75){
-            printf("Distinction");
+            printf("Distinction!");
         }
         else if(percentage>=60){
             printf("First division");
