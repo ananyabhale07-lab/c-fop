@@ -17,7 +17,7 @@
            scanf("%f",&b[i][j]); 
         }
     }
-    printf("Enter 1 for addition.\nEnter 2 for subtraction\nEnter 3 to find saddle point of matrix a\nEnter 4 for the inverse of matrix a");
+    printf("Enter 1 for addition.\nEnter 2 for subtraction\nEnter 3 to find saddle point of matrix a\nEnter 4 for the inverse of matrix a\nEnter 5 to check if matrix a is magic square or not");
     scanf("%d",&cho);
     switch(cho){
         case 1:
@@ -93,6 +93,16 @@ break;
       printf("Inverse doesn't exist");
      }
      break;
+     case 5:{
+     float sum=a[0][0]+a[0][1];
+     if(sum==a[1][0]+a[1][1] && sum==a[0][0]+a[1][0] && sum==a[0][1]+a[1][1] && sum==a[0][0]+a[1][1] && sum==a[0][1]+a[1][0]){
+      printf("Matrix a is a magic square");
+     }
+     else{
+      printf("Matrix a is not magic square");
+     }
+      break;
+     }
     }
 
  }
