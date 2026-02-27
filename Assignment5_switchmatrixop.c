@@ -1,20 +1,23 @@
 #include<stdio.h>
  void main(){
-    int a[2][2],b[2][2],c[2][2],d[2][2],i,j,cho;
+    float a[2][2],b[2][2],c[2][2],d[2][2];
+    int i,j,cho;
     int is_saddle=0;
+    float inv[2][2];
+    float det;
     printf("Enter the elements of the first matrix");
     for(i=0;i<2;i++){
         for(j=0;j<2;j++){
-           scanf("%d",&a[i][j]); 
+           scanf("%f",&a[i][j]); 
         }
     }
     printf("Enter the elements of the second matrix");
     for(i=0;i<2;i++){
         for(j=0;j<2;j++){
-           scanf("%d",&b[i][j]); 
+           scanf("%f",&b[i][j]); 
         }
     }
-    printf("Enter 1 for addition.\nEnter 2 for subtraction\nEnter 3 to find saddle point of matrix a");
+    printf("Enter 1 for addition.\nEnter 2 for subtraction\nEnter 3 to find saddle point of matrix a\nEnter 4 for the inverse of matrix a");
     scanf("%d",&cho);
     switch(cho){
         case 1:
@@ -25,7 +28,7 @@
         }
         for(i=0;i<2;i++){
         for(j=0;j<2;j++){
-        printf("%d ", c[i][j]);
+        printf("%f ", c[i][j]);
     }
     printf("\n");
 }
@@ -38,7 +41,7 @@ case 2:
         }
         for(i=0;i<2;i++){
         for(j=0;j<2;j++){
-        printf("%d ", c[i][j]);
+        printf("%f ", c[i][j]);
     }
     printf("\n");
 }
@@ -62,7 +65,7 @@ break;
         }
        }
     if(issmallestinrow && islargestincol){
-     printf("Saddle point is:%d",a[i][j]);
+     printf("Saddle point is:%f",a[i][j]);
      is_saddle=1;
     } 
       }
@@ -71,6 +74,25 @@ break;
       printf("No saddle point");
      }
    break;
+     case 4:
+     det=a[0][0]*a[1][1]-a[0][1]*a[1][0];
+     if(det!=0){
+      inv[0][0]=a[1][1]/det;
+      inv[0][1]=-a[0][1]/det;
+      inv[1][0]=-a[1][0]/det;
+      inv[1][1]=a[0][0]/det;
+      printf("The inverse matrix of a is:\n");
+      for(i=0;i<2;i++){
+       for(j=0;j<2;j++){
+        printf("%.2f ",inv[i][j]);
+       }
+       printf("\n");
+      }
+     }
+     else{
+      printf("Inverse doesn't exist");
+     }
+     break;
     }
 
  }
