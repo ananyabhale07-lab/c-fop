@@ -16,7 +16,7 @@ void main(){
         str2[j]=str1[i];
         j++;
     }
-    str2[j]='/0';
+    str2[j]='\0';
     printf("Reversed string: %s\n", str2);
     //Check for palindrome
     if(strcmp(str1,str2)==0){
