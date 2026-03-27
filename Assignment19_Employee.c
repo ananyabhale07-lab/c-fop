@@ -20,7 +20,7 @@ void gendercount(struct EMPLOYEE e[],int n){
             female++;
         }
     }
-    printf("No.of Male employees:%d/n",male);
+    printf("No.of Male employees:%d\n",male);
     printf("No.of Female employee:%d\n",female);
 }
 void highSalary(struct EMPLOYEE e[], int n) {
