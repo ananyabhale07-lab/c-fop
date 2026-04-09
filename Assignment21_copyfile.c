@@ -22,22 +22,20 @@ int main() {
 
     
     destination = fopen(dest, "w");
-    if (destination == NULL) {
-        printf("Error: Cannot open destination file.\n");
-        fclose(source);
-        exit(1);
-    }
+   
 
     
     while ((ch = fgetc(source)) != EOF) {
         fputc(ch, destination);
     }
+    fclose(source);
+    fclose(destination);
+
 
     printf("File copied successfully.\n");
 
    
-    fclose(source);
-    fclose(destination);
+   
 
     return 0;
 }
